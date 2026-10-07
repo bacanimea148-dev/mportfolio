@@ -1,0 +1,2703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Rose Mea Bacani - Information Technology Student Portfolio">
+
+    <title>Rose Mea Bacani | IT Student</title>
+
+    <style>
+
+        /* =====================================================
+           GOOGLE-LIKE FONT FALLBACK
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #050816;
+            color: #f5f7ff;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =====================================================
+           COLORS
+        ===================================================== */
+
+        :root {
+            --bg: #050816;
+            --bg2: #080d22;
+            --card: rgba(15, 23, 52, 0.72);
+
+            --blue: #3b82f6;
+            --cyan: #22d3ee;
+            --purple: #8b5cf6;
+            --pink: #ec4899;
+
+            --white: #ffffff;
+            --text: #f5f7ff;
+            --muted: #a9b3ca;
+
+            --border: rgba(255, 255, 255, 0.10);
+
+            --glow-blue: rgba(59, 130, 246, 0.35);
+            --glow-purple: rgba(139, 92, 246, 0.30);
+        }
+
+
+        /* =====================================================
+           BACKGROUND ANIMATION
+        ===================================================== */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(59, 130, 246, 0.14),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 85% 30%,
+                    rgba(139, 92, 246, 0.14),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 50% 90%,
+                    rgba(34, 211, 238, 0.08),
+                    transparent 30%
+                ),
+                #050816;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.35;
+            animation: floatOrb 12s ease-in-out infinite;
+        }
+
+        .orb.one {
+            width: 280px;
+            height: 280px;
+            background: #2563eb;
+            top: 10%;
+            left: -80px;
+        }
+
+        .orb.two {
+            width: 350px;
+            height: 350px;
+            background: #7c3aed;
+            right: -100px;
+            top: 35%;
+            animation-delay: -4s;
+        }
+
+        .orb.three {
+            width: 250px;
+            height: 250px;
+            background: #0891b2;
+            bottom: -70px;
+            left: 40%;
+            animation-delay: -8s;
+        }
+
+        @keyframes floatOrb {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(40px, -50px) scale(1.15);
+            }
+        }
+
+
+        /* =====================================================
+           CONTAINER
+        ===================================================== */
+
+        .container {
+            width: min(92%, 1150px);
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            padding: 15px 0;
+        }
+
+        .navbar {
+            min-height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 25px;
+
+            background: rgba(8, 13, 34, 0.72);
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            backdrop-filter: blur(18px);
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+
+            color: white;
+        }
+
+        .logo span {
+            color: var(--cyan);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+
+            transition: 0.3s ease;
+
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            width: 0;
+            height: 2px;
+
+            left: 50%;
+            bottom: -8px;
+
+            transform: translateX(-50%);
+
+            background: linear-gradient(
+                90deg,
+                var(--cyan),
+                var(--purple)
+            );
+
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+
+            border: none;
+            background: transparent;
+
+            color: white;
+
+            font-size: 1.6rem;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 120px;
+        }
+
+        .hero-content {
+            display: grid;
+
+            grid-template-columns: 1.15fr 0.85fr;
+
+            align-items: center;
+
+            gap: 70px;
+        }
+
+        .hello {
+            display: inline-block;
+
+            padding: 7px 15px;
+
+            border-radius: 30px;
+
+            background: rgba(59, 130, 246, 0.12);
+
+            border: 1px solid rgba(59, 130, 246, 0.25);
+
+            color: var(--cyan);
+
+            font-size: 0.85rem;
+            font-weight: 700;
+
+            margin-bottom: 20px;
+
+            animation: pulseBadge 3s infinite;
+        }
+
+        @keyframes pulseBadge {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 rgba(59, 130, 246, 0);
+            }
+
+            50% {
+                box-shadow: 0 0 25px rgba(59, 130, 246, 0.2);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.8rem);
+
+            line-height: 1.05;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 18px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                var(--cyan),
+                var(--blue),
+                var(--purple)
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+
+            background-size: 200% auto;
+
+            animation: gradientMove 5s linear infinite;
+        }
+
+        @keyframes gradientMove {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .hero h2 {
+            color: #d9e2ff;
+
+            font-size: clamp(1.2rem, 3vw, 1.7rem);
+
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            color: var(--muted);
+
+            font-size: 1.02rem;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 13px 24px;
+
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            transition: 0.3s ease;
+        }
+
+        .primary-btn {
+            background: linear-gradient(
+                135deg,
+                var(--blue),
+                var(--purple)
+            );
+
+            color: white;
+
+            box-shadow:
+                0 10px 30px rgba(59, 130, 246, 0.25);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 15px 40px rgba(59, 130, 246, 0.4);
+        }
+
+        .secondary-btn {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            background: rgba(255, 255, 255, 0.04);
+
+            color: white;
+
+            backdrop-filter: blur(10px);
+        }
+
+        .secondary-btn:hover {
+            border-color: var(--cyan);
+
+            color: var(--cyan);
+
+            transform: translateY(-4px);
+        }
+
+
+        /* =====================================================
+           PROFILE
+        ===================================================== */
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-wrapper {
+            position: relative;
+
+            width: 320px;
+            height: 320px;
+        }
+
+        .profile-glow {
+            position: absolute;
+
+            inset: -25px;
+
+            border-radius: 50%;
+
+            background:
+                conic-gradient(
+                    var(--cyan),
+                    var(--blue),
+                    var(--purple),
+                    var(--pink),
+                    var(--cyan)
+                );
+
+            filter: blur(25px);
+
+            opacity: 0.45;
+
+            animation: rotateGlow 8s linear infinite;
+        }
+
+        @keyframes rotateGlow {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .profile-ring {
+            position: absolute;
+
+            inset: 0;
+
+            padding: 6px;
+
+            border-radius: 50%;
+
+            background:
+                conic-gradient(
+                    var(--cyan),
+                    var(--blue),
+                    var(--purple),
+                    var(--cyan)
+                );
+
+            animation: rotateGlow 8s linear infinite;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 8px solid #080d22;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .floating-badge {
+            position: absolute;
+
+            z-index: 5;
+
+            padding: 10px 15px;
+
+            border-radius: 12px;
+
+            background: rgba(10, 17, 40, 0.85);
+
+            border: 1px solid var(--border);
+
+            backdrop-filter: blur(10px);
+
+            color: white;
+
+            font-size: 0.8rem;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        .badge-one {
+            top: 20px;
+            right: -35px;
+        }
+
+        .badge-two {
+            bottom: 30px;
+            left: -40px;
+            animation-delay: -2s;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ===================================================== */
+
+        .section {
+            padding: 110px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 60px;
+        }
+
+        .section-tag {
+            color: var(--cyan);
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            font-size: 0.75rem;
+
+            font-weight: 800;
+
+            margin-bottom: 10px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--muted);
+        }
+
+        .section-line {
+            width: 60px;
+            height: 3px;
+
+            margin: 20px auto;
+
+            border-radius: 10px;
+
+            background: linear-gradient(
+                90deg,
+                var(--cyan),
+                var(--purple)
+            );
+        }
+
+
+        /* =====================================================
+           GLASS CARDS
+        ===================================================== */
+
+        .glass {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            backdrop-filter: blur(18px);
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.18);
+
+            border-radius: 20px;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+        }
+
+        .about-card {
+            padding: 35px;
+        }
+
+        .about-card h3 {
+            font-size: 1.5rem;
+
+            margin-bottom: 20px;
+
+            color: white;
+        }
+
+        .about-card p {
+            color: var(--muted);
+
+            margin-bottom: 15px;
+        }
+
+        .info-grid {
+            display: grid;
+
+            gap: 15px;
+
+            padding: 30px;
+        }
+
+        .info-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 15px;
+
+            border-radius: 12px;
+
+            background: rgba(255, 255, 255, 0.035);
+
+            border: 1px solid rgba(255, 255, 255, 0.06);
+
+            transition: 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateX(5px);
+
+            border-color: rgba(34, 211, 238, 0.3);
+        }
+
+        .info-icon {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: rgba(59, 130, 246, 0.12);
+
+            font-size: 1.2rem;
+        }
+
+        .info-item h4 {
+            color: white;
+
+            font-size: 0.9rem;
+        }
+
+        .info-item p {
+            color: var(--muted);
+
+            font-size: 0.85rem;
+        }
+
+        .goal {
+            margin-top: 25px;
+
+            padding: 30px;
+
+            border-left: 3px solid var(--cyan);
+        }
+
+        .goal h3 {
+            margin-bottom: 10px;
+        }
+
+        .goal p {
+            color: var(--muted);
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+        .skill-card {
+            padding: 25px;
+
+            text-align: center;
+
+            transition: 0.35s ease;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+
+            top: -50px;
+            right: -50px;
+
+            background: var(--purple);
+
+            filter: blur(50px);
+
+            opacity: 0;
+
+            transition: 0.4s;
+        }
+
+        .skill-card:hover::before {
+            opacity: 0.5;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+
+            border-color: rgba(59, 130, 246, 0.4);
+
+            box-shadow:
+                0 15px 40px rgba(59, 130, 246, 0.12);
+        }
+
+        .skill-icon {
+            width: 65px;
+            height: 65px;
+
+            margin: auto auto 15px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 17px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(59, 130, 246, 0.15),
+                    rgba(139, 92, 246, 0.15)
+                );
+
+            border: 1px solid rgba(59, 130, 246, 0.2);
+
+            color: var(--cyan);
+
+            font-weight: 800;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 6px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+
+            font-size: 0.82rem;
+        }
+
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+        .project-card {
+            padding: 30px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition: 0.35s ease;
+        }
+
+        .project-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            right: -100px;
+            top: -100px;
+
+            border-radius: 50%;
+
+            background: var(--purple);
+
+            filter: blur(70px);
+
+            opacity: 0.12;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+
+            border-color: rgba(139, 92, 246, 0.4);
+        }
+
+        .project-number {
+            color: var(--cyan);
+
+            font-weight: 800;
+
+            font-size: 0.75rem;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+
+            font-size: 0.9rem;
+
+            margin-bottom: 20px;
+        }
+
+        .tech-list {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 25px;
+        }
+
+        .tech-list span {
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            background: rgba(59, 130, 246, 0.1);
+
+            border: 1px solid rgba(59, 130, 246, 0.15);
+
+            color: #8fc9ff;
+
+            font-size: 0.7rem;
+
+            font-weight: 700;
+        }
+
+        .project-buttons {
+            display: flex;
+
+            gap: 10px;
+        }
+
+        .project-btn {
+            padding: 8px 14px;
+
+            border-radius: 8px;
+
+            background: linear-gradient(
+                135deg,
+                var(--blue),
+                var(--purple)
+            );
+
+            color: white;
+
+            font-size: 0.8rem;
+
+            font-weight: 700;
+
+            transition: 0.3s ease;
+        }
+
+        .project-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px rgba(59, 130, 246, 0.25);
+        }
+
+        .project-btn.outline {
+            background: transparent;
+
+            border: 1px solid var(--border);
+        }
+
+
+        /* =====================================================
+           EDUCATION
+        ===================================================== */
+
+        .education-card {
+            max-width: 850px;
+
+            margin: auto;
+
+            padding: 35px;
+
+            display: flex;
+
+            gap: 25px;
+
+            align-items: flex-start;
+        }
+
+        .education-icon {
+            width: 65px;
+            height: 65px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 17px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(34, 211, 238, 0.12),
+                    rgba(139, 92, 246, 0.12)
+                );
+
+            font-size: 1.6rem;
+        }
+
+        .education-year {
+            color: var(--cyan);
+
+            font-size: 0.75rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+        }
+
+        .education-card h3 {
+            margin-top: 5px;
+
+            font-size: 1.4rem;
+        }
+
+        .education-card h4 {
+            color: #9cc9ff;
+
+            font-size: 1rem;
+
+            margin: 5px 0 10px;
+        }
+
+        .education-card p {
+            color: var(--muted);
+
+            font-size: 0.9rem;
+        }
+
+
+        /* =====================================================
+           INTERESTS
+        ===================================================== */
+
+        .interests-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+        .interest-card {
+            min-height: 140px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            transition: 0.35s ease;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-7px);
+
+            border-color: rgba(34, 211, 238, 0.35);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(59, 130, 246, 0.12),
+                    rgba(139, 92, 246, 0.12)
+                );
+        }
+
+        .interest-card span {
+            font-size: 2rem;
+
+            margin-bottom: 10px;
+        }
+
+        .interest-card h3 {
+            font-size: 0.95rem;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .contact-card {
+            padding: 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            transition: 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-6px);
+
+            border-color: rgba(34, 211, 238, 0.35);
+        }
+
+        .contact-icon {
+            font-size: 1.7rem;
+        }
+
+        .contact-card h3 {
+            font-size: 0.95rem;
+        }
+
+        .contact-card p {
+            color: var(--muted);
+
+            font-size: 0.8rem;
+
+            word-break: break-word;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .footer {
+            padding: 35px 0;
+
+            border-top: 1px solid var(--border);
+
+            background: rgba(3, 6, 18, 0.7);
+        }
+
+        .footer-content {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .footer h3 {
+            font-size: 1rem;
+        }
+
+        .footer p {
+            color: var(--muted);
+
+            font-size: 0.8rem;
+        }
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ===================================================== */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(35px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+           SCROLL TO TOP
+        ===================================================== */
+
+        #topButton {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 45px;
+            height: 45px;
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--blue),
+                    var(--purple)
+                );
+
+            color: white;
+
+            font-size: 1.1rem;
+
+            cursor: pointer;
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            z-index: 900;
+
+            box-shadow:
+                0 10px 30px rgba(59, 130, 246, 0.3);
+
+            transition: 0.3s ease;
+        }
+
+        #topButton:hover {
+            transform: translateY(-5px);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .interests-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 800px) {
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+
+                top: 75px;
+                left: 0;
+
+                width: 100%;
+
+                padding: 25px;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 20px;
+
+                background: rgba(8, 13, 34, 0.95);
+
+                border: 1px solid var(--border);
+
+                border-radius: 15px;
+
+                backdrop-filter: blur(20px);
+
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .hero-text {
+                order: 2;
+            }
+
+            .hero-image {
+                order: 1;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .profile-wrapper {
+                width: 250px;
+                height: 250px;
+            }
+
+            .badge-one {
+                right: -15px;
+            }
+
+            .badge-two {
+                left: -15px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+
+        @media (max-width: 550px) {
+
+            .navbar {
+                padding: 0 18px;
+            }
+
+            .hero {
+                padding-top: 130px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+
+                letter-spacing: -2px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .interests-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .education-card {
+                flex-direction: column;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+        }
+
+
+        @media (max-width: 380px) {
+
+            .interests-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-wrapper {
+                width: 220px;
+                height: 220px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ANIMATED BACKGROUND
+    ===================================================== -->
+
+    <div class="background">
+
+        <div class="orb one"></div>
+
+        <div class="orb two"></div>
+
+        <div class="orb three"></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ===================================================== -->
+
+    <header class="header">
+
+        <nav class="navbar container">
+
+            <a href="#home" class="logo">
+                Rose<span>.</span>
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation">
+
+                ☰
+
+            </button>
+
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+
+                <li>
+                    <a href="#interests">Interests</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =================================================
+             HOME
+        ================================================= -->
+
+        <section id="home" class="hero">
+
+            <div class="container hero-content">
+
+
+                <div class="hero-text reveal">
+
+                    <span class="hello">
+                        👋 Hello, welcome to my portfolio
+                    </span>
+
+
+                    <h1>
+
+                        Rose Mea
+
+                        <br>
+
+                        <span class="gradient-text">
+                            Bacani
+                        </span>
+
+                    </h1>
+
+
+                    <h2>
+                        Information Technology Student
+                    </h2>
+
+
+                    <p class="hero-description">
+
+                        I am a 2nd-year Bachelor of Science in
+                        Information Technology student who enjoys
+                        learning web development, programming,
+                        networking, and new technologies.
+
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#projects"
+                            class="btn primary-btn">
+
+                            View My Projects →
+
+                        </a>
+
+
+                        <a
+                            href="#contact"
+                            class="btn secondary-btn">
+
+                            Contact Me
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROFILE -->
+
+                <div class="hero-image reveal">
+
+                    <div class="profile-wrapper">
+
+                        <div class="profile-glow"></div>
+
+                        <div class="profile-ring">
+
+                            <img
+                                src="c:\Users\Administrator\Desktop\RoseMea\images\images.jpg"
+                                alt="Rose Mea Bacani"
+                                class="profile-image">
+
+                        </div>
+
+
+                        <div class="floating-badge badge-one">
+
+                            💻 IT Student
+
+                        </div>
+
+
+                        <div class="floating-badge badge-two">
+
+                            🎓 NVSU
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ABOUT
+        ================================================= -->
+
+        <section id="about" class="section">
+
+            <div class="container">
+
+
+                <div class="section-title reveal">
+
+                    <div class="section-tag">
+                        About Me
+                    </div>
+
+                    <h2>
+                        Get to Know Me
+                    </h2>
+
+                    <div class="section-line"></div>
+
+                    <p>
+                        A little information about me,
+                        my education, and my goals.
+                    </p>
+
+                </div>
+
+
+                <div class="about-grid">
+
+
+                    <div class="about-card glass reveal">
+
+                        <h3>
+                            Who I Am
+                        </h3>
+
+
+                        <p>
+
+                            My name is
+                            <strong>Rose Mea Bacani</strong>.
+                            I am currently taking Bachelor of
+                            Science in Information Technology at
+                            Nueva Vizcaya State University,
+                            Bayombong Campus.
+
+                        </p>
+
+
+                        <p>
+
+                            As an IT student, I am continuously
+                            learning different technologies and
+                            developing my skills through school
+                            activities, projects, and personal
+                            experiences.
+
+                        </p>
+
+
+                        <p>
+
+                            I believe that learning technology is
+                            a continuous process. I am excited to
+                            improve my skills and gain more
+                            experience as I continue my journey
+                            in Information Technology.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-grid glass reveal">
+
+
+                        <div class="info-item">
+
+                            <span class="info-icon">
+                                🎓
+                            </span>
+
+                            <div>
+
+                                <h4>
+                                    Course
+                                </h4>
+
+                                <p>
+                                    Bachelor of Science in
+                                    Information Technology
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span class="info-icon">
+                                📚
+                            </span>
+
+                            <div>
+
+                                <h4>
+                                    Year Level
+                                </h4>
+
+                                <p>
+                                    2nd Year College Student
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span class="info-icon">
+                                🏫
+                            </span>
+
+                            <div>
+
+                                <h4>
+                                    University
+                                </h4>
+
+                                <p>
+                                    Nueva Vizcaya State University
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span class="info-icon">
+                                📍
+                            </span>
+
+                            <div>
+
+                                <h4>
+                                    Campus
+                                </h4>
+
+                                <p>
+                                    Bayombong Campus
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="goal glass reveal">
+
+                    <h3>
+                        🎯 My Goal as an IT Student
+                    </h3>
+
+                    <p>
+
+                        My goal is to continue improving my technical
+                        and creative skills, gain more experience in
+                        developing useful applications and websites,
+                        and become a confident IT professional in
+                        the future.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SKILLS
+        ================================================= -->
+
+        <section id="skills" class="section">
+
+            <div class="container">
+
+
+                <div class="section-title reveal">
+
+                    <div class="section-tag">
+                        Skills
+                    </div>
+
+                    <h2>
+                        What I Am Learning
+                    </h2>
+
+                    <div class="section-line"></div>
+
+                    <p>
+                        Technologies and skills I am currently
+                        learning and developing.
+                    </p>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+
+                    <div class="skill-card glass reveal">
+
+                        <div class="skill-icon">
+                            HTML
+                        </div>
+
+                        <h3>
+                            HTML
+                        </h3>
+
+                        <p>
+                            Building the structure of websites.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card glass reveal">
+
+                        <div class="skill-icon">
+                            CSS
+                        </div>
+
+                        <h3>
+                            CSS
+                        </h3>
+
+                        <p>
+                            Styling and designing web pages.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card glass reveal">
+
+                        <div class="skill-icon">
+                            JS
+                        </div>
+
+                        <h3>
+                            JavaScript
+                        </h3>
+
+                        <p>
+                            Creating basic website interactions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card glass reveal">
+
+                        <div class="skill-icon">
+                            PHP
+                        </div>
+
+                        <h3>
+                            PHP
+                        </h3>
+
+                        <p>
+                            Learning basic web programming.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card glass reveal">
+
+                        <div class="skill-icon">
+                            SQL
+                        </div>
+
+                        <h3>
+                            MySQL
+                        </h3>
+
+                        <p>
+                            Learning database management.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card glass reveal">
+
+                        <div class="skill-icon">
+                            NET
+                        </div>
+
+                        <h3>
+                            Networking
+                        </h3>
+
+                        <p>
+                            Learning basic networking concepts.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card glass reveal">
+
+                        <div class="skill-icon">
+                            MS
+                        </div>
+
+                        <h3>
+                            Microsoft Office
+                        </h3>
+
+                        <p>
+                            Word, Excel, PowerPoint, and more.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card glass reveal">
+
+                        <div class="skill-icon">
+                            ✍
+                        </div>
+
+                        <h3>
+                            Writing Poems
+                        </h3>
+
+                        <p>
+                            Expressing creativity through writing.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PROJECTS
+        ================================================= -->
+
+        <section id="projects" class="section">
+
+            <div class="container">
+
+
+                <div class="section-title reveal">
+
+                    <div class="section-tag">
+                        Projects
+                    </div>
+
+                    <h2>
+                        My Work
+                    </h2>
+
+                    <div class="section-line"></div>
+
+                    <p>
+                        Some of my school and personal projects.
+                    </p>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+
+                    <!-- PROJECT 1 -->
+
+                    <article class="project-card glass reveal">
+
+                        <div class="project-number">
+                            PROJECT 01
+                        </div>
+
+                        <h3>
+                            ChapterTrack
+                        </h3>
+
+                        <p>
+
+                            A Learning Management System designed
+                            to organize chapter-based learning
+                            materials and help monitor student
+                            progress.
+
+                        </p>
+
+
+                        <div class="tech-list">
+
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
+
+                        </div>
+
+
+                        <div class="project-buttons">
+
+                            <!-- Replace # with your GitHub URL -->
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                class="project-btn">
+
+                                GitHub
+
+                            </a>
+
+
+                            <!-- Replace # with your Live Demo URL -->
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                class="project-btn outline">
+
+                                Live Demo
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 2 -->
+
+                    <article class="project-card glass reveal">
+
+                        <div class="project-number">
+                            PROJECT 02
+                        </div>
+
+                        <h3>
+                            Resident Registration System
+                        </h3>
+
+                        <p>
+
+                            A simple system designed to manage
+                            and organize resident registration
+                            information.
+
+                        </p>
+
+
+                        <div class="tech-list">
+
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+
+                        </div>
+
+
+                        <div class="project-buttons">
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                class="project-btn">
+
+                                GitHub
+
+                            </a>
+
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                class="project-btn outline">
+
+                                Live Demo
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 3 -->
+
+                    <article class="project-card glass reveal">
+
+                        <div class="project-number">
+                            PROJECT 03
+                        </div>
+
+                        <h3>
+                            Student Portfolio
+                        </h3>
+
+                        <p>
+
+                            A personal portfolio website created
+                            to showcase my skills, projects,
+                            education, and interests as an IT
+                            student.
+
+                        </p>
+
+
+                        <div class="tech-list">
+
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+
+                        </div>
+
+
+                        <div class="project-buttons">
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                class="project-btn">
+
+                                GitHub
+
+                            </a>
+
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                class="project-btn outline">
+
+                                Live Demo
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             EDUCATION
+        ================================================= -->
+
+        <section id="education" class="section">
+
+            <div class="container">
+
+
+                <div class="section-title reveal">
+
+                    <div class="section-tag">
+                        Education
+                    </div>
+
+                    <h2>
+                        My Education
+                    </h2>
+
+                    <div class="section-line"></div>
+
+                </div>
+
+
+                <div class="education-card glass reveal">
+
+                    <div class="education-icon">
+                        🎓
+                    </div>
+
+
+                    <div>
+
+                        <span class="education-year">
+                            CURRENT
+                        </span>
+
+                        <h3>
+                            Nueva Vizcaya State University
+                        </h3>
+
+                        <h4>
+                            Bachelor of Science in
+                            Information Technology
+                        </h4>
+
+                        <p>
+                            2nd Year College Student
+                        </p>
+
+                        <p>
+                            Bayombong Campus
+                        </p>
+
+                        <p>
+                            College of Information Technology Education
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             INTERESTS
+        ================================================= -->
+
+        <section id="interests" class="section">
+
+            <div class="container">
+
+
+                <div class="section-title reveal">
+
+                    <div class="section-tag">
+                        Interests
+                    </div>
+
+                    <h2>
+                        Things I Enjoy
+                    </h2>
+
+                    <div class="section-line"></div>
+
+                </div>
+
+
+                <div class="interests-grid">
+
+
+                    <div class="interest-card glass reveal">
+
+                        <span>💻</span>
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+                    </div>
+
+
+                    <div class="interest-card glass reveal">
+
+                        <span>⌨️</span>
+
+                        <h3>
+                            Programming
+                        </h3>
+
+                    </div>
+
+
+                    <div class="interest-card glass reveal">
+
+                        <span>🌐</span>
+
+                        <h3>
+                            Networking
+                        </h3>
+
+                    </div>
+
+
+                    <div class="interest-card glass reveal">
+
+                        <span>📖</span>
+
+                        <h3>
+                            Reading
+                        </h3>
+
+                    </div>
+
+
+                    <div class="interest-card glass reveal">
+
+                        <span>✍️</span>
+
+                        <h3>
+                            Writing Poems
+                        </h3>
+
+                    </div>
+
+
+                    <div class="interest-card glass reveal">
+
+                        <span>👑</span>
+
+                        <h3>
+                            Pageantry
+                        </h3>
+
+                    </div>
+
+
+                    <div class="interest-card glass reveal">
+
+                        <span>💡</span>
+
+                        <h3>
+                            Learning Technology
+                        </h3>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACT
+        ================================================= -->
+
+        <section id="contact" class="section">
+
+            <div class="container">
+
+
+                <div class="section-title reveal">
+
+                    <div class="section-tag">
+                        Contact
+                    </div>
+
+                    <h2>
+                        Let's Connect
+                    </h2>
+
+                    <div class="section-line"></div>
+
+                    <p>
+                        Feel free to connect with me through
+                        the following platforms.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-grid">
+
+
+                    <!-- Replace with your real email -->
+
+                    <a
+                        href="mailto:rosemea@gmail.com"
+                        class="contact-card glass reveal">
+
+                        <span class="contact-icon">
+                            ✉️
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Email
+                            </h3>
+
+                            <p>
+                                rosemea@gmail.com
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- Replace # with your GitHub -->
+
+                    <a
+                        href="#"
+                        target="_blank"
+                        class="contact-card glass reveal">
+
+                        <span class="contact-icon">
+                            💻
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                GitHub
+                            </h3>
+
+                            <p>
+                                github.com/yourusername
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- Replace # with your Facebook -->
+
+                    <a
+                        href="#"
+                        target="_blank"
+                        class="contact-card glass reveal">
+
+                        <span class="contact-icon">
+                            📘
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Facebook
+                            </h3>
+
+                            <p>
+                                Your Facebook Profile
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div>
+
+                <h3>
+                    Rose Mea Bacani
+                </h3>
+
+                <p>
+                    Information Technology Student
+                </p>
+
+            </div>
+
+
+            <p>
+
+                ©
+                <span id="year">
+                    2026
+                </span>
+
+                Rose Mea Bacani.
+                All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         SCROLL TO TOP
+    ===================================================== -->
+
+    <button
+        id="topButton"
+        aria-label="Back to top">
+
+        ↑
+
+    </button>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+
+        /* =================================================
+           MOBILE NAVIGATION
+        ================================================= */
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle("active");
+
+
+                if (navLinks.classList.contains("active")) {
+
+                    menuToggle.textContent = "✕";
+
+                } else {
+
+                    menuToggle.textContent = "☰";
+
+                }
+
+            }
+        );
+
+
+        /* Close menu when clicking a link */
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navLinks.classList.remove("active");
+
+                        menuToggle.textContent = "☰";
+
+                    }
+                );
+
+            });
+
+
+        /* =================================================
+           SCROLL REVEAL
+        ================================================= */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        function revealOnScroll() {
+
+            const windowHeight =
+                window.innerHeight;
+
+
+            revealElements.forEach(
+                function (element) {
+
+                    const elementTop =
+                        element.getBoundingClientRect().top;
+
+
+                    if (
+                        elementTop <
+                        windowHeight - 80
+                    ) {
+
+                        element.classList.add("active");
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            revealOnScroll
+        );
+
+
+        revealOnScroll();
+
+
+        /* =================================================
+           SCROLL TO TOP
+        ================================================= */
+
+        const topButton =
+            document.getElementById("topButton");
+
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                if (window.scrollY > 500) {
+
+                    topButton.style.display = "flex";
+
+                } else {
+
+                    topButton.style.display = "none";
+
+                }
+
+            }
+        );
+
+
+        topButton.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+
+        /* =================================================
+           CURRENT YEAR
+        ================================================= */
+
+        document.getElementById("year")
+            .textContent =
+            new Date().getFullYear();
+
+
+    </script>
+
+</body>
+
+</html>
